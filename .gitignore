@@ -1,5 +1,5 @@
 *.o
 PhoneBook
 megaphone
-.vscode/
+.vscode
 .DS_Store
