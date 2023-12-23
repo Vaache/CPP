@@ -1,0 +1,5 @@
+*.o
+PhoneBook
+megaphone
+.vscode/
+.DS_Store
