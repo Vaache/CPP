@@ -6,7 +6,7 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 19:26:24 by vhovhann          #+#    #+#             */
-/*   Updated: 2023/12/23 21:42:23 by vhovhann         ###   ########.fr       */
+/*   Updated: 2023/12/25 14:41:30 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,11 @@ int main()
 		std::cout << "Command SEARCH: searching and showing contacts." << std::endl;
 		std::cout << "Command EXIT: Closing programm." << std::endl;
 		std::cout << std::endl;
+		std::cout << "Input Command : ";
 		getline(std::cin, input);
 		if (std::cin.eof())
 		{
-			std::cout << "Exit the program!\n" << "You pressed ctrl+D." << std::endl;
+			std::cout << "\nExit the program!\n" << "You pressed ctrl+D." << std::endl;
 			exit (1);
 		}
 		if (input == "ADD")
@@ -40,5 +41,11 @@ int main()
 			if (i == 8)
 				i = 0;
 		}
+		else if (input == "SEARCH")
+			a.search(count);
+		else if (input == "EXIT")
+			exit (0);
+		else
+			std::cout << "Wrong input !!!" << std::endl;
 	}
 }
