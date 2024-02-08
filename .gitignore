@@ -1,5 +1,7 @@
 *.o
 PhoneBook
 megaphone
+Zombie
+main
 .vscode
 .DS_Store

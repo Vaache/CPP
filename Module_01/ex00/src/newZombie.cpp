@@ -1,38 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Account.cpp                                        :+:      :+:    :+:   */
+/*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/25 17:28:20 by vhovhann          #+#    #+#             */
-/*   Updated: 2023/12/25 17:31:55 by vhovhann         ###   ########.fr       */
+/*   Created: 2024/02/08 20:07:25 by vhovhann          #+#    #+#             */
+/*   Updated: 2024/02/08 20:32:19 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Account.hpp"
-#include <iomanip>
-#include <iostream>
+#include "Zombie.hpp"
 
-int	Account::getNbAccounts(void)
+Zombie *newZombie( std::string name )
 {
-	return _nbAccounts;
-}
-int	Account::getTotalAmount(void)
-{
-	return _totalAmount;
-}
+	Zombie *tmp;
 
-int	Account::getNbDeposits(void)
-{
-	return _totalNbDeposits;
-}
-int	Account::getNbWithdrawals(void)
-{
-	return _totalNbWithdrawals;
-}
-
-Account::~Account(void)
-{
-	
+	tmp = new Zombie(name);
+	return tmp;
 }
