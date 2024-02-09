@@ -5,31 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/09 14:56:01 by vhovhann          #+#    #+#             */
-/*   Updated: 2024/02/09 15:49:28 by vhovhann         ###   ########.fr       */
+/*   Created: 2024/02/09 18:50:27 by vhovhann          #+#    #+#             */
+/*   Updated: 2024/02/09 19:19:28 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
-#include "HumanA.hpp"
-#include "HumanB.hpp"
+#include "HarlFilter.hpp"
 
-int main()
+int main(int argc, char **argv)
 {
+
+	if (argc != 2)
 	{
-		Weapon club = Weapon("crude spiked club");
-		HumanA bob("Bob", club);
-		bob.attack();
-		club.setType("some other type of club");
-		bob.attack();
+		std::cout << "Error !!!" << std::endl;
+		return 1;
 	}
-	{
-		Weapon club = Weapon("crude spiked club");
-		HumanB jim("Jim");
-		jim.setWeapon(club);
-		jim.attack();
-		club.setType("some other type of club");
-		jim.attack();
-	}
-	return 0;
+	HarlF obj;
+
+	obj.complain(argv[1]);
 }

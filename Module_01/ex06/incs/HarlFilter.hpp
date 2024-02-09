@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   HarlFilter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/08 21:46:48 by vhovhann          #+#    #+#             */
-/*   Updated: 2024/02/09 15:47:24 by vhovhann         ###   ########.fr       */
+/*   Created: 2024/02/09 18:02:55 by vhovhann          #+#    #+#             */
+/*   Updated: 2024/02/09 19:19:01 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_HPP
-# define WEAPON_HPP
+#ifndef HARLFILTER_HPP
+# define HARLFILTER_HPP
 
 #include <iostream>
-// #include <string>
+#include <string>
 
-class Weapon
+class HarlF
 {
 private:
-	std::string type;
+	void debug( void );
+	void info( void );
+	void warning( void );
+	void error( void );
 
 public:
-	Weapon(std::string type);
-	std::string getType();
-	void		setType(std::string type);
+	void complain( std::string level );
+
 };
 
 #endif

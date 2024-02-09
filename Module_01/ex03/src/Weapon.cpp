@@ -6,18 +6,21 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 21:48:50 by vhovhann          #+#    #+#             */
-/*   Updated: 2024/02/08 21:50:11 by vhovhann         ###   ########.fr       */
+/*   Updated: 2024/02/09 15:31:03 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 
-std::string Weapon::_getType()
+Weapon::Weapon(std::string type):type(type)
+{}
+
+std::string Weapon::getType()
 {
 	return this->type;
 }
 
-void	Weapon::_setType(std::string type)
+void	Weapon::setType(std::string type)
 {
 	this->type = type;
 }

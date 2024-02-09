@@ -1,4 +1,4 @@
-NAME	= Humans
+NAME	= Harl_2.0
 
 SRC_DIR = src
 SRC 	= $(wildcard $(SRC_DIR)/*.cpp)

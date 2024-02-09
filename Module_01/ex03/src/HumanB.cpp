@@ -6,24 +6,23 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 21:56:10 by vhovhann          #+#    #+#             */
-/*   Updated: 2024/02/08 22:15:16 by vhovhann         ###   ########.fr       */
+/*   Updated: 2024/02/09 15:44:47 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
+#include "HumanB.hpp"
 
-HumanB::HumanB(std::string &name)
+HumanB::HumanB(std::string name)
 {
 	this->name = name;
 }
 
-HumanB::HumanB(std::string &name, Weapon &wp)
+void HumanB::setWeapon(Weapon &club)
 {
-	this->name = name;
-	this->wp = wp;
+	this->wp = &club;
 }
 
-HumanB::~HumanB()
+void HumanB::attack()
 {
-	std::cout << "Destructokr HumanB ..." << std::endl;
+	std::cout << this->name << "attacks with their" << wp->getType() << std::endl;
 }

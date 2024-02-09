@@ -1,4 +1,4 @@
-NAME	= Humans
+NAME	= HarlFilter
 
 SRC_DIR = src
 SRC 	= $(wildcard $(SRC_DIR)/*.cpp)
