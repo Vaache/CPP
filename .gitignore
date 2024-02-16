@@ -1,3 +1,5 @@
+.vscode
+.DS_Store
 *.o
 PhoneBook
 megaphone
@@ -11,5 +13,4 @@ Fixed
 Fixed1
 Fixed2
 Point
-.vscode
-.DS_Store
+ScavTrap

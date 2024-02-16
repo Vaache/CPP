@@ -1,4 +1,4 @@
-NAME	= ClapTrap
+NAME	= ScavTrap
 
 SRC 	= $(wildcard *.cpp)
 
@@ -12,7 +12,7 @@ INCLUDES	= -I./
 MK			= mkdir -p
 
 # test :
-# 	@echo $(HEADERS)
+# 	@echo $(OBJ)
 
 all: $(NAME)
 
