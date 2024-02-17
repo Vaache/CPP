@@ -6,7 +6,7 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 16:00:26 by vhovhann          #+#    #+#             */
-/*   Updated: 2024/02/17 20:06:00 by vhovhann         ###   ########.fr       */
+/*   Updated: 2024/02/17 21:17:58 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ protected:
 
 public:
 	ClapTrap();
-	ClapTrap(std::string &_name_);
+	ClapTrap(const std::string &_name_);
+	ClapTrap(const ClapTrap &other);
 	virtual ~ClapTrap();
 
 	void attack(const std::string& target);

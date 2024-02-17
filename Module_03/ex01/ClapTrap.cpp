@@ -6,7 +6,7 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 16:04:37 by vhovhann          #+#    #+#             */
-/*   Updated: 2024/02/16 18:46:52 by vhovhann         ###   ########.fr       */
+/*   Updated: 2024/02/17 16:02:24 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ void ClapTrap::attack(const std::string& target)
 {
 	if (!this->_Energy_ || !this->_Hit_)
 		return ;
-	std::cout << "ClapTrap " << this->_name_ <<  "attacks " << target << " causing ";
+	std::cout << "ClapTrap " << this->_name_ <<  " attacks " << target << " causing ";
 	std::cout << this->_Attack_ << " points of damage!" << std::endl;
 	-- this->_Energy_;
 }
@@ -96,7 +96,6 @@ void ClapTrap::takeDamage(unsigned int amount)
 {
 	if (this->_Hit_ && this->_Hit_ >= amount)
 	{
-		std::cout << this->_Hit_ << std::endl;
 		std::cout << this->_name_ << " Received damage " << amount << std::endl;
 		this->_Hit_ -= amount;
 	}
@@ -121,31 +120,3 @@ void ClapTrap::showInfo()
 	std::cout << "Energy : " << this->_Energy_ << std::endl;
 	std::cout << "Attack : " << this->_Attack_ << std::endl;
 }
-/*
-parametr constructr called
-Default constructor called
-ClapTraps Name rob-bot
-ClapTrap Has 10 Health points
-ClapTrap Has 10 Energy points
-ClapTrap Has 0 damage
-ClapTrap rob-bot attacks tree, causing 0 points of damage!
-ClapTrap rob-bot attacks enemy, causing 0 points of damage!
-ClapTrap rob-bot attacks another enemy, causing 0 points of damage!
-ClapTrap receives 1 Health
-ClapTrap receives 1 Health
-ClapTrap receives 1 Health
-ClapTrap Repairsing, 2 Health Points
-ClapTrap Repairsing, 2 Health Points
-ClapTrap Repairsing, 2 Health Points
-ClapTraps Name rob-bot
-ClapTrap Has 13 Health points
-ClapTrap Has 4 Energy points
-ClapTrap Has 0 damage
-Copy assignment operator called
-ClapTraps Name rob-bot
-ClapTrap Has 13 Health points
-ClapTrap Has 4 Energy points
-ClapTrap Has 0 damage
-Destructor called
-Destructor called
-*/

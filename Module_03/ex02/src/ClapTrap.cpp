@@ -6,7 +6,7 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 16:04:37 by vhovhann          #+#    #+#             */
-/*   Updated: 2024/02/17 16:02:28 by vhovhann         ###   ########.fr       */
+/*   Updated: 2024/02/17 16:02:17 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 ClapTrap::ClapTrap():_name_("NULL"),_Hit_(0),_Energy_(0),_Attack_(0)
 {
-	std::cout << "Default counstructor called ..." << std::endl;
+	std::cout << "ClapTrap Default counstructor called ..." << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string &_name_)
 {
-	std::cout << "Parameter counstructor called ..." << std::endl;
+	std::cout << "ClapTrap Parameter counstructor called ..." << std::endl;
 	this->_name_ = _name_;
 	this->_Hit_ = 10;
 	this->_Energy_ = 10;
@@ -28,7 +28,19 @@ ClapTrap::ClapTrap(std::string &_name_)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Destrucktor ..." << std::endl;
+	std::cout << "ClapTrap Destrucktor ..." << std::endl;
+}
+
+ClapTrap&	ClapTrap::operator =(const ClapTrap &other)
+{
+	std::cout << "ClapTrap Copy assignment operator called" << std::endl;
+	if (this == &other)
+		return *this;
+	this->_name_ = other._name_;
+	this->_Hit_ = other._Hit_;
+	this->_Energy_ = other._Energy_;
+	this->_Attack_ = other._Attack_;
+	return *this;
 }
 
 int	ClapTrap::getHit()
