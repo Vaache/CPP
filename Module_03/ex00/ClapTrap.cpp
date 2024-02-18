@@ -6,7 +6,7 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 16:04:37 by vhovhann          #+#    #+#             */
-/*   Updated: 2024/02/17 16:02:28 by vhovhann         ###   ########.fr       */
+/*   Updated: 2024/02/18 16:00:53 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,31 +130,3 @@ void ClapTrap::showInfo()
 	std::cout << "Energy : " << this->_Energy_ << std::endl;
 	std::cout << "Attack : " << this->_Attack_ << std::endl;
 }
-/*
-parametr constructr called
-Default constructor called
-ClapTraps Name rob-bot
-ClapTrap Has 10 Health points
-ClapTrap Has 10 Energy points
-ClapTrap Has 0 damage
-ClapTrap rob-bot attacks tree, causing 0 points of damage!
-ClapTrap rob-bot attacks enemy, causing 0 points of damage!
-ClapTrap rob-bot attacks another enemy, causing 0 points of damage!
-ClapTrap receives 1 Health
-ClapTrap receives 1 Health
-ClapTrap receives 1 Health
-ClapTrap Repairsing, 2 Health Points
-ClapTrap Repairsing, 2 Health Points
-ClapTrap Repairsing, 2 Health Points
-ClapTraps Name rob-bot
-ClapTrap Has 13 Health points
-ClapTrap Has 4 Energy points
-ClapTrap Has 0 damage
-Copy assignment operator called
-ClapTraps Name rob-bot
-ClapTrap Has 13 Health points
-ClapTrap Has 4 Energy points
-ClapTrap Has 0 damage
-Destructor called
-Destructor called
-*/
