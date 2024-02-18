@@ -20,6 +20,7 @@ class ScavTrap : virtual public ClapTrap
 public:
 	ScavTrap();
 	ScavTrap(const std::string &_name_);
+	ScavTrap(const ScavTrap &other);
 	virtual ~ScavTrap();
 
 	void guardGate();

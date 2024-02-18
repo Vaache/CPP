@@ -26,6 +26,15 @@ ClapTrap::ClapTrap(std::string &_name_)
 	this->_Attack_ = 0;
 }
 
+ClapTrap::ClapTrap(const ClapTrap &other)
+{
+	std::cout << "ClapTrap copy counstructor called ..." << std::endl;
+	this->_name_ = other._name_;
+	this->_Hit_ = other._Hit_;
+	this->_Energy_ = other._Energy_;
+	this->_Attack_ = other._Attack_;
+}
+
 ClapTrap::~ClapTrap()
 {
 	std::cout << "ClapTrap Destrucktor ..." << std::endl;
@@ -33,7 +42,7 @@ ClapTrap::~ClapTrap()
 
 ClapTrap&	ClapTrap::operator =(const ClapTrap &other)
 {
-	std::cout << "ClapTrap Copy assignment operator called" << std::endl;
+	std::cout << "ClapTrap assignment operator called" << std::endl;
 	if (this == &other)
 		return *this;
 	this->_name_ = other._name_;

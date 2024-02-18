@@ -15,6 +15,7 @@ FragTrap::FragTrap()
 {
 	std::cout << "Default FragTrap constructor called" << std::endl;
 }
+
 FragTrap::FragTrap(std::string &_name_):ClapTrap(_name_)
 {
 	std::cout << "FragTrap Parameter constructor called" << std::endl;
@@ -22,6 +23,17 @@ FragTrap::FragTrap(std::string &_name_):ClapTrap(_name_)
 	this->_Energy_ = 100;
 	this->_Attack_ = 30;
 }
+
+FragTrap::FragTrap(const FragTrap &other)
+{
+	std::cout << "FragTrap copy constructor called" << std::endl;
+	this->_Hit_ = other._Hit_;
+	this->_Energy_ = other._Energy_;
+	this->_Attack_ = other._Attack_;
+	this->_name_ = other._name_;
+	
+}
+
 FragTrap::~FragTrap()
 {
 	std::cout << "FragTrap destructor called ..." << std::endl;

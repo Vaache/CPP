@@ -31,6 +31,15 @@ ClapTrap::~ClapTrap()
 	std::cout << "ClapTrap Destrucktor ..." << std::endl;
 }
 
+ClapTrap::ClapTrap(const ClapTrap &other)
+{
+	std::cout << "ClapTrap Copy counstructor called" << std::endl;
+	this->_name_ = other._name_;
+	this->_Hit_ = other._Hit_;
+	this->_Energy_ = other._Energy_;
+	this->_Attack_ = other._Attack_;
+}
+
 ClapTrap&	ClapTrap::operator =(const ClapTrap &other)
 {
 	std::cout << "ClapTrap Copy assignment operator called" << std::endl;

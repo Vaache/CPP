@@ -19,11 +19,33 @@ ClapTrap::ClapTrap():_name_("NULL"),_Hit_(0),_Energy_(0),_Attack_(0)
 
 ClapTrap::ClapTrap(std::string &_name_)
 {
-	std::cout << "Parameter counstructor called ..." << std::endl;
+	std::cout << "ClapTrap Parameter counstructor called ..." << std::endl;
 	this->_name_ = _name_;
 	this->_Hit_ = 10;
 	this->_Energy_ = 10;
 	this->_Attack_ = 0;
+}
+
+ClapTrap::ClapTrap(const ClapTrap &other)
+{
+	std::cout << "ClapTrap copy counstructor called ..." << std::endl;
+	this->_name_ = other._name_;
+	this->_Hit_ = other._Hit_;
+	this->_Energy_ = other._Energy_;
+	this->_Attack_ = other._Attack_;
+}
+
+ClapTrap& ClapTrap::operator=(const ClapTrap &other)
+{
+	std::cout << "ClapTrap assignment operator called..." << std::endl;
+    if (this != &other)
+    {
+        this->_name_ = other._name_;
+        this->_Hit_ = other._Hit_;
+        this->_Energy_ = other._Energy_;
+        this->_Attack_ = other._Attack_;
+    }
+    return *this;
 }
 
 ClapTrap::~ClapTrap()

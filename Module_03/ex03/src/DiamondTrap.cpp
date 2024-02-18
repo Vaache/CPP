@@ -16,6 +16,7 @@ DiamondTrap::DiamondTrap():_name_("nil")
 {
 	std::cout << "DiamondTrap Default counstructor called ..." << std::endl;
 }
+
 DiamondTrap::DiamondTrap(const std::string &name):ClapTrap(),_name_(name)
 {
 	std::cout << "DiamondTrap Parameter counstructor called ..." << std::endl;
@@ -23,6 +24,12 @@ DiamondTrap::DiamondTrap(const std::string &name):ClapTrap(),_name_(name)
 	this->_Energy_ = 50; //ScavTrap energy point
 	this->_Attack_ = 30; //Attack Hit points
 }
+
+DiamondTrap::DiamondTrap(const DiamondTrap &other):ClapTrap(other),ScavTrap(other),FragTrap(other)
+{
+	std::cout << "DiamondTrap copy counstructor called ..." << std::endl;
+}
+
 DiamondTrap::~DiamondTrap()
 {
 	std::cout << "DiamondTrap Destrucktor ..." << std::endl;

@@ -33,9 +33,11 @@ ClapTrap::~ClapTrap()
 
 ClapTrap::ClapTrap(const ClapTrap &other)
 {
+	std::cout << "ClapTrap copy counstructor called ..." << std::endl;
 	this->_Hit_ = other._Hit_;
 	this->_Energy_ = other._Energy_;
 	this->_Attack_ = other._Attack_;
+	this->_name_ = other._name_;
 }
 
 ClapTrap&	ClapTrap::operator =(const ClapTrap &other)

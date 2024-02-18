@@ -27,6 +27,15 @@ FragTrap::~FragTrap()
 	std::cout << "FragTrap destructor called ..." << std::endl;
 }
 
+FragTrap::FragTrap(const FragTrap &other)
+{
+	std::cout << "FragTrap copy constructor called ..." << std::endl;
+	this->_Hit_ = other._Hit_;
+	this->_Energy_ = other._Energy_;
+	this->_Attack_ = other._Attack_;
+	this->_name_ = other._name_;
+}
+
 FragTrap&	FragTrap::operator =(const FragTrap &other)
 {
 	std::cout << "FragTrap Copy assignment operator called" << std::endl;
