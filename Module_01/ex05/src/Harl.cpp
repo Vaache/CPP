@@ -6,11 +6,17 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 18:08:09 by vhovhann          #+#    #+#             */
-/*   Updated: 2024/02/09 19:08:10 by vhovhann         ###   ########.fr       */
+/*   Updated: 2024/02/22 14:39:16 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
+
+void print_err()
+{
+	std::cout << "Error!!!" << std::endl;
+	exit(1);
+}
 
 void Harl::complain( std::string level )
 {
@@ -19,7 +25,7 @@ void Harl::complain( std::string level )
 	int i = 0;
 	while (level != arr[i] && arr[i] != "NULL")
 		++i;
-	(i != 4) ? (this->*fptr[i])() : exit(printf("Error!!!\n"));
+	(i != 4) ? (this->*fptr[i])() : print_err();
 }
 
 void Harl::debug( void )

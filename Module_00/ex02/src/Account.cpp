@@ -6,7 +6,7 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 17:28:20 by vhovhann          #+#    #+#             */
-/*   Updated: 2024/02/08 19:50:25 by vhovhann         ###   ########.fr       */
+/*   Updated: 2024/02/21 16:32:28 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,6 @@
 #include <iostream>
 #include <ctime>
 
-int	_accountIndex = 0;
-int	_amount = 0;
-int	_nbDeposits = 0;
-int	_nbWithdrawals = 0;
 int	Account::_nbAccounts = 0;
 int	Account::_totalAmount = 0;
 int	Account::_totalNbDeposits = 0;

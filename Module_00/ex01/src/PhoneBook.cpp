@@ -6,7 +6,7 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 20:40:04 by vhovhann          #+#    #+#             */
-/*   Updated: 2023/12/25 14:39:26 by vhovhann         ###   ########.fr       */
+/*   Updated: 2024/02/21 16:32:46 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ void	PhoneBook::search(int count)
 			if (std::cin.eof())
 				exit (1);
 			index = std::atoi(tmp.c_str());
-			if (index > count || tmp.empty() || index < 0 || std::isalpha(tmp[0]))
+			if (index >= count || tmp.empty() || index < 0 || std::isalpha(tmp[0]))
 			{
 				std::cout << "You entered an incorrect index!!!" << std::endl;
 				continue ;

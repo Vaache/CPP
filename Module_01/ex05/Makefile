@@ -15,7 +15,7 @@ INCLUDES	= -Iincs
 MK			= mkdir -p
 
 # test :
-# 	@echo $(HEADERS)
+# 	@echo $(OBJ)
 
 all: $(OBJ_DIR) $(NAME)
 

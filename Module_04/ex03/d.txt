@@ -1,0 +1,43 @@
+Default MateriaSource Constructor.
+Parameter AMateria Constructor.
+Default Ice Constructor.
+MateriaSource learned.
+Parameter AMateria Constructor.
+Default Cure Constructor.
+MateriaSource learned.
+Parametr Character Constructor.
+GetType AMateria Function.
+GetType AMateria Function.
+Einventory Is Full.
+GetType AMateria Function.
+GetType AMateria Function.
+Einventory Is Full.
+GetType AMateria Function.
+GetType AMateria Function.
+Einventory Is Full.
+GetType AMateria Function.
+GetType AMateria Function.
+Einventory Is Full.
+GetType AMateria Function.
+GetType AMateria Function.
+Einventory Is Full.
+GetType AMateria Function.
+GetType AMateria Function.
+Einventory Is Full.
+GetType AMateria Function.
+GetType AMateria Function.
+Einventory Is Full.
+GetType AMateria Function.
+GetType AMateria Function.
+Einventory Is Full.
+Materia Doesn't Exist.
+Parametr Character Constructor.
+Materia Doesn't Exist.
+Materia Doesn't Exist.
+Destructor Character.
+Destructor Character.
+Destructor MateriaSource.
+Destructor Ice.
+Destructor AMateria.
+Destructor Cure.
+Destructor AMateria.

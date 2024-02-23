@@ -1,0 +1,54 @@
+MateriaSource Default constructop called
+AMateria Parameter canstructor called
+Ice Default constructor called
+MateriaSource learned.
+AMateria Parameter canstructor called
+Cure Default constructor called
+MateriaSource learned.
+Character Parameter constructor called
+GetType AMateria Function called
+AMateria Copy canstructor called
+Ice Copy constructor called
+GetType AMateria Function called
+GetType AMateria Function called
+AMateria Copy canstructor called
+Cure Copy constructor called
+GetType AMateria Function called
+GetType AMateria Function called
+AMateria Copy canstructor called
+Cure Copy constructor called
+GetType AMateria Function called
+GetType AMateria Function called
+AMateria Copy canstructor called
+Cure Copy constructor called
+GetType AMateria Function called
+GetType AMateria Function called
+AMateria Copy canstructor called
+Cure Copy constructor called
+Einventory Is Full.
+GetType AMateria Function called
+GetType AMateria Function called
+AMateria Copy canstructor called
+Cure Copy constructor called
+Einventory Is Full.
+GetType AMateria Function called
+GetType AMateria Function called
+AMateria Copy canstructor called
+Cure Copy constructor called
+Einventory Is Full.
+GetType AMateria Function called
+GetType AMateria Function called
+AMateria Copy canstructor called
+Cure Copy constructor called
+Einventory Is Full.
+Materia Doesn't Exist.
+Character Parameter constructor called
+* shoots an ice bolt at bob *
+* heals bob's wounds * *
+Character Destructor called
+Character Destructor called
+MateriaSource Destructop called
+Ice Destructor called
+AMateria Destructor called
+Cure Destructor called
+AMateria Destructor called
