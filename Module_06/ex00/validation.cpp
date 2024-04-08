@@ -6,7 +6,7 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 19:47:00 by vhovhann          #+#    #+#             */
-/*   Updated: 2024/04/08 20:44:58 by vhovhann         ###   ########.fr       */
+/*   Updated: 2024/04/08 22:19:32 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,9 @@ int validation(const std::string &str)
 {
 	if (str == "-inff" || str == "-inf" || str == "+inff" || str == "+inf" || str == "nanf" || str == "nan")
 		return 1;
-	int i = 0;
+	size_t i = 0;
+	while (i < str.length() && (str[i] == ' ' || str[i] == '\t'))
+		++i;
 	if (str[i] == '+' || str[i] == '-')
 		++i;
 	if (isdigit(str[i]) && (str.find(".", i) != std::string::npos) && (str.find("f", i) != std::string::npos) && str.length() > 3)
@@ -86,7 +88,7 @@ int validation(const std::string &str)
 	if (isdigit(str[i]) && (str.find(".", i) != std::string::npos) && str.length() > 2)
 		return (pars_double(&str[i]));
 	else if (isdigit(str[i]) && (str.find(".", i) == std::string::npos) && (str.find("f", i) == std::string::npos))
-		return (pars_int(str));
+		return (pars_int(&str[i]));
 	else if (str.length() == 1)
 		return (pars_char(str));
 	else

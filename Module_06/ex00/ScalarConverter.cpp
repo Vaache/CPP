@@ -6,7 +6,7 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 14:37:27 by vhovhann          #+#    #+#             */
-/*   Updated: 2024/04/08 21:28:35 by vhovhann         ###   ########.fr       */
+/*   Updated: 2024/04/08 22:18:18 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,15 @@ void ScalarConverter::convert(const char *arg)
 	std::string str(arg);
 	if (!validation(str))
 		throw ScalarConverter::ExpHandler();
-		int i = 0;
+	size_t i = 0;
+	while (i < str.length() && (str[i] == ' ' || str[i] == '\t'))
+		++i;
 	if (str[i] == '+' || str[i] == '-')
 		++i;
 	if ((isdigit(str[i]) && (str.find(".", i) != std::string::npos) && (str.find("f", i) != std::string::npos) && str.length() > 3) \
 			|| str == "nanf" || str == "-inff" || str == "+inff")
 		float_cast(atof(arg), arg);
-	if ((isdigit(str[i]) && (str.find(".", i) != std::string::npos) && str.length() > 2) \
+	else if ((isdigit(str[i]) && (str.find(".", i) != std::string::npos) && str.length() > 2) \
 			|| str == "nan" || str == "-inf" || str == "+inf")
 		double_cast(atof_l(arg, NULL), arg);
 	else if (isdigit(str[i]) && (str.find(".", i) == std::string::npos) && (str.find("f", i) == std::string::npos))
