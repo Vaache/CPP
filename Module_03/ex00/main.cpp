@@ -6,7 +6,7 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 16:27:29 by vhovhann          #+#    #+#             */
-/*   Updated: 2024/02/16 16:11:34 by vhovhann         ###   ########.fr       */
+/*   Updated: 2024/03/27 16:50:38 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,8 @@ int main()
 
     robot_2 = robot_1;
     robot_2.showInfo();
+	std::string name = "Hello";
+	ClapTrap obj1(name);
+	ClapTrap obj2 = obj1;
    	return (0);	
 }

@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/23 19:16:09 by vhovhann          #+#    #+#             */
-/*   Updated: 2024/03/13 20:09:38 by vhovhann         ###   ########.fr       */
+/*   Created: 2024/04/08 14:39:23 by vhovhann          #+#    #+#             */
+/*   Updated: 2024/04/08 20:54:57 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#include "ScalarConverter.hpp"
 
-#include "Contac.hpp"
-
-class PhoneBook
+int main(int argc, char **argv)
 {
-private:
-		Contact a[8];
-		bool 	pars_number(std::string _phone_number_);
-		bool 	only_space(std::string _space_);
-		void	pars_set_dot(std::string &s1, std::string s2);
-
-public:
-		void add(int i);
-		void add_first_name(int i);
-		void add_last_name(int i);
-		void add_phone_number(int i);
-		void search(int count);
-};
-
-#endif
+	if (argc != 2)
+	{
+		std::cout << "Too many arguments" << std::endl;
+		return 0;
+	}
+	try
+	{
+		ScalarConverter::convert(argv[1]);
+	}
+	catch(ScalarConverter::ExpHandler &ex)
+	{
+		std::cerr << ex.what() << std::endl;
+	}
+	
+}

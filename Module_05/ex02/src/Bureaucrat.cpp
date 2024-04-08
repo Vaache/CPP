@@ -6,7 +6,7 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 16:57:22 by vhovhann          #+#    #+#             */
-/*   Updated: 2024/04/05 18:19:19 by vhovhann         ###   ########.fr       */
+/*   Updated: 2024/04/07 17:07:07 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ std::string Bureaucrat::getName() const
 	return this->_name_;
 }
 
-int			Bureaucrat::getGrade() const
+int	Bureaucrat::getGrade() const
 {
 	return this->_grade_;
 }
@@ -69,16 +69,24 @@ void Bureaucrat::increaseGrade()
 void Bureaucrat::decreaseGrade()
 {
 	if (++this->_grade_ > 150)
-		throw Bureaucrat::GradeTooLowException() ;
+		throw Bureaucrat::GradeTooLowException();
 }
 
-void Bureaucrat::signForm(const Form& form) const
+void Bureaucrat::signForm(const AForm& form) const
 {
 	if (form.getSigned())
 		std::cout << this->_name_ << " signed " << form.getName() << std::endl;
 	else
 		std::cout << this->_name_ << " couldn't sign " << form.getName() <<  " because low grade." << std::endl;
 		
+}
+
+void Bureaucrat::executeForm(AForm const & form) const
+{
+	if (form.getGradeExec())
+		std::cout << this->_name_ << " executed " << form.getName() << std::endl;
+	else
+		std::cout << this->_name_ << " failed " << form.getName() << std::endl;
 }
 
 std::ostream& operator <<(std::ostream &os, const Bureaucrat& obj)

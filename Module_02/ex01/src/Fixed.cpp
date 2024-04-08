@@ -6,13 +6,11 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 20:13:06 by vhovhann          #+#    #+#             */
-/*   Updated: 2024/02/11 18:23:28 by vhovhann         ###   ########.fr       */
+/*   Updated: 2024/03/30 16:20:22 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-
-
 
 const int Fixed::fbit = 8;
 
