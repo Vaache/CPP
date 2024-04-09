@@ -6,7 +6,7 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 21:01:33 by vhovhann          #+#    #+#             */
-/*   Updated: 2024/04/08 22:20:53 by vhovhann         ###   ########.fr       */
+/*   Updated: 2024/04/08 22:23:28 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,14 @@ void double_cast(double num, const std::string &arg)
 void char_cast(char c)
 {
 	std::cout << "char : '" << c << "'" << std::endl;
-	std::cout << "int : " << static_cast<char>(c) << std::endl;
-	std::cout << "float : " << static_cast<float>(c) << "f" << std::endl;
-	std::cout << "double : " << static_cast<int>(c) << std::endl;
+	std::cout << "int : " << static_cast<int>(c) << std::endl;
+	std::cout << "float : " << static_cast<float>(c);
+	if (static_cast<int>(c) == c)
+		std::cout << ".0f" << std::endl;
+	else
+		std::cout << "f" << std::endl;
+	std::cout << "double : " << static_cast<double>(c);
+	if (static_cast<int>(c) == c)
+		std::cout << ".0";
+	std::cout << std::endl;
 }

@@ -1,32 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/08 14:39:23 by vhovhann          #+#    #+#             */
-/*   Updated: 2024/04/08 22:28:42 by vhovhann         ###   ########.fr       */
+/*   Created: 2024/04/09 16:15:29 by vhovhann          #+#    #+#             */
+/*   Updated: 2024/04/09 17:19:37 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#ifndef BASE_HPP
+# define BASE_HPP
 
-int main(int argc, char **argv)
+#include <iostream>
+#include <cstdlib>
+#include <ctime> 
+
+class Base
 {
-	if (argc != 2)
-	{
-		std::cout << "Too many arguments" << std::endl;
-		return 0;
-	}
-	try
-	{
-		ScalarConverter::convert(argv[1]);
-	}
-	catch(ScalarConverter::ExpHandler &ex)
-	{
-		std::cerr << ex.what() << std::endl;
-		return 1;
-	}
-	return 0;
-}
+public:
+	Base();
+	virtual ~Base();
+};
+
+class A : public Base
+{
+public:
+	A();
+	~A();
+};
+
+class B : public Base
+{
+public:
+	B();
+	~B();
+};
+
+class C : public Base
+{
+public:
+	C();
+	~C();
+};
+
+Base* generate();
+void identify(Base* p);
+void identify(Base& p);
+
+#endif

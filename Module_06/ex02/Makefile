@@ -1,11 +1,11 @@
-NAME	= SCast
+NAME	= DCast
 
 SRC 	= $(wildcard *.cpp)
 
 OBJ		= $(patsubst %.cpp, %.o, $(SRC))
 
 CC			= c++
-CFLAGS		= -Wall -Wextra -Werror -std=c++98 $(INCLUDES) -g3 -fsanitize=address
+CFLAGS		= -Wall -Wextra -Werror -std=c++98 $(INCLUDES) #-g3 -fsanitize=address
 HEADERS 	= $(wildcard *.hpp)
 INCLUDES	= -I./
 

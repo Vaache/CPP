@@ -5,28 +5,38 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/08 14:39:23 by vhovhann          #+#    #+#             */
-/*   Updated: 2024/04/08 22:28:42 by vhovhann         ###   ########.fr       */
+/*   Created: 2024/04/09 16:12:06 by vhovhann          #+#    #+#             */
+/*   Updated: 2024/04/09 17:37:28 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#include "Base.hpp"
 
-int main(int argc, char **argv)
+int main()
 {
-	if (argc != 2)
+	std::srand(static_cast<unsigned int>(std::time(NULL)));
 	{
-		std::cout << "Too many arguments" << std::endl;
-		return 0;
+		Base *ptr;
+		ptr = generate();
+		identify(ptr);
+		identify(*ptr);
+		std::cout << std::endl;
+		delete ptr;
 	}
-	try
 	{
-		ScalarConverter::convert(argv[1]);
+		Base *ptr;
+		ptr = generate();
+		identify(ptr);
+		identify(*ptr);
+		std::cout << std::endl;
+		delete ptr;
 	}
-	catch(ScalarConverter::ExpHandler &ex)
 	{
-		std::cerr << ex.what() << std::endl;
-		return 1;
+		Base *ptr;
+		ptr = generate();
+		identify(ptr);
+		identify(*ptr);
+		delete ptr;
 	}
 	return 0;
 }

@@ -5,28 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/08 14:39:23 by vhovhann          #+#    #+#             */
-/*   Updated: 2024/04/08 22:28:42 by vhovhann         ###   ########.fr       */
+/*   Created: 2024/04/09 15:01:49 by vhovhann          #+#    #+#             */
+/*   Updated: 2024/04/09 17:18:04 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#include "Serializer.hpp"
 
-int main(int argc, char **argv)
+int main()
 {
-	if (argc != 2)
-	{
-		std::cout << "Too many arguments" << std::endl;
-		return 0;
-	}
+	Data *ptr = new Data;
 	try
 	{
-		ScalarConverter::convert(argv[1]);
+		uintptr_t num = Serializer::serialize(ptr);
+
+		Data *new_ptr = Serializer::deserialize(num);
+
+		std::cout << "Ptr == " << ptr << std::endl;
+		std::cout << "New Ptr == " << new_ptr << std::endl;
 	}
-	catch(ScalarConverter::ExpHandler &ex)
+	catch(const std::exception& e)
 	{
-		std::cerr << ex.what() << std::endl;
+		std::cerr << e.what() << '\n';
+		delete ptr;
 		return 1;
 	}
+	delete ptr;
 	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 19:47:00 by vhovhann          #+#    #+#             */
-/*   Updated: 2024/04/08 22:19:32 by vhovhann         ###   ########.fr       */
+/*   Updated: 2024/04/08 22:22:14 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ static int onlydigit_f(const std::string &str, int mode)
 
 static int pars_flaot(const std::string &str)
 {
-	std::cout << "Called pars_float" << std::endl;
 	std::string preDotDigits = str.substr(0, str.find(".", 0));
 	std::string postDotDigits = str.substr(str.find(".", 0) + 1);
 	if (preDotDigits.empty() || postDotDigits.empty() || (postDotDigits.length() == 1) \
@@ -50,7 +49,6 @@ static int pars_flaot(const std::string &str)
 
 static int pars_double(const std::string &str)
 {
-	std::cout << "Called pars_double" << std::endl;
 	std::string preDotDigits = str.substr(0, str.find(".", 0));
 	std::string postDotDigits = str.substr(str.find(".", 0) + 1);
 	if (preDotDigits.empty() || postDotDigits.empty() || !onlydigit_f(preDotDigits, 1)  || !onlydigit_f(postDotDigits, 1))
@@ -60,7 +58,6 @@ static int pars_double(const std::string &str)
 
 static int pars_int(const std::string &str)
 {
-	std::cout << "Called pars_int" << std::endl;
 	if (!onlydigit_f(str, 1))
 		return 0;
 	return 1;
@@ -68,7 +65,6 @@ static int pars_int(const std::string &str)
 
 static int pars_char(const std::string &str)
 {
-	std::cout << "Called pars_char" << std::endl;
 	if (str.length() != 1)
 		return 0;
 	return 1;
