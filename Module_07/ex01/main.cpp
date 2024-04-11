@@ -5,38 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/09 16:12:06 by vhovhann          #+#    #+#             */
-/*   Updated: 2024/04/09 18:32:52 by vhovhann         ###   ########.fr       */
+/*   Created: 2024/04/11 17:22:09 by vhovhann          #+#    #+#             */
+/*   Updated: 2024/04/11 17:56:15 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Base.hpp"
+#include <iter.hpp>
 
 int main()
 {
-	std::srand(static_cast<unsigned int>(std::time(NULL)));
-	{
-		Base *ptr;
-		ptr = generate();
-		identify(ptr);
-		identify(*ptr);
-		std::cout << std::endl;
-		delete ptr;
-	}
-	{
-		Base *ptr;
-		ptr = generate();
-		identify(ptr);
-		identify(*ptr);
-		std::cout << std::endl;
-		delete ptr;
-	}
-	{
-		Base *ptr;
-		ptr = generate();
-		identify(ptr);
-		identify(*ptr);
-		delete ptr;
-	}
-	return 0;
+	// int arr[] = {1,2,3,4,5,6,7,8};
+	// size_t size = sizeof(arr) / sizeof(arr[0]);
+	// ::iter(arr, size, ::print);
+	std::string str[] = {"H","e","l","l","o"};
+	::iter(str, 5, print);
 }

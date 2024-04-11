@@ -1,42 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/09 16:12:06 by vhovhann          #+#    #+#             */
-/*   Updated: 2024/04/09 18:32:52 by vhovhann         ###   ########.fr       */
+/*   Created: 2024/04/11 15:40:51 by vhovhann          #+#    #+#             */
+/*   Updated: 2024/04/11 15:48:46 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Base.hpp"
+#ifndef WHATEVER_HPP
+# define WHATEVER_HPP
 
-int main()
-{
-	std::srand(static_cast<unsigned int>(std::time(NULL)));
+#include <iostream>
+
+template <typename T>
+	void swap(T &a, T &b)
 	{
-		Base *ptr;
-		ptr = generate();
-		identify(ptr);
-		identify(*ptr);
-		std::cout << std::endl;
-		delete ptr;
-	}
+		T tmp = a;
+		a = b;
+		b = tmp;
+	};
+
+template <typename T>
+	T max(T a, T b)
 	{
-		Base *ptr;
-		ptr = generate();
-		identify(ptr);
-		identify(*ptr);
-		std::cout << std::endl;
-		delete ptr;
+		return a == b ? b : a > b ? a : b;
 	}
+
+template <typename T>
+	T min(T a, T b)
 	{
-		Base *ptr;
-		ptr = generate();
-		identify(ptr);
-		identify(*ptr);
-		delete ptr;
+		return a == b ? b : a > b ? b : a;
 	}
-	return 0;
-}
+
+#endif
