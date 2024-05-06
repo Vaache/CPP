@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Point.cpp                                          :+:      :+:    :+:   */
+/*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/11 20:49:21 by vhovhann          #+#    #+#             */
-/*   Updated: 2024/04/17 14:07:04 by vhovhann         ###   ########.fr       */
+/*   Created: 2024/04/27 16:09:32 by vhovhann          #+#    #+#             */
+/*   Updated: 2024/04/27 16:17:08 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
+#ifndef _SPAN_HPP_
+# define _SPAN_HPP_
 
-Point::Point():x(0),y(0)
-{}
+#include <iostream>
+#include <vector>
+#include <iterator>
 
-Point::Point(const float num1, const float num2):x(num1),y(num2)
-{}
-
-Point::Point(const Point& other):x(other.x),y(other.y)
-{}
-Point& Point::operator =(const Point& other)
+class Span
 {
-	(void)other;
-	return *this;
-}
-Point::~Point()
-{}
+private:
+	unsigned int N;
+	std::vector<int> arr;
 
-float Point::getX() const
-{
-	return (x.toFloat());
-}
-float Point::getY() const
-{
-	return (y.toFloat());
-}
+public:
+	Span();
+	Span(unsigned int N);
+	Span(const Span &other);
+	Span& operator =(const Span &other);
+	~Span();
+
+	void addNumber(int num);
+	int shortestSpan();
+	int longestSpan();	
+};
+
+#endif

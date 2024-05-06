@@ -1,38 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Point.cpp                                          :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/11 20:49:21 by vhovhann          #+#    #+#             */
-/*   Updated: 2024/04/17 14:07:04 by vhovhann         ###   ########.fr       */
+/*   Created: 2024/04/12 14:43:29 by vhovhann          #+#    #+#             */
+/*   Updated: 2024/04/12 14:43:30 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
+#ifndef _INTERN_HPP_
+#define _INTERN_HPP_
 
-Point::Point():x(0),y(0)
-{}
+#include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
-Point::Point(const float num1, const float num2):x(num1),y(num2)
-{}
+class AForm;
 
-Point::Point(const Point& other):x(other.x),y(other.y)
-{}
-Point& Point::operator =(const Point& other)
+class Intern
 {
-	(void)other;
-	return *this;
-}
-Point::~Point()
-{}
+public:
+    Intern();
+    Intern(const Intern&);
+    Intern& operator= (const Intern&);
+    ~Intern();
 
-float Point::getX() const
-{
-	return (x.toFloat());
-}
-float Point::getY() const
-{
-	return (y.toFloat());
-}
+    AForm *makeForm(std::string form, std::string target);
+};
+
+#endif

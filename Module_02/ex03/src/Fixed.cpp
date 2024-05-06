@@ -6,7 +6,7 @@
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 20:13:06 by vhovhann          #+#    #+#             */
-/*   Updated: 2024/02/14 15:03:32 by vhovhann         ###   ########.fr       */
+/*   Updated: 2024/04/17 14:06:35 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -168,4 +168,10 @@ Fixed Fixed::max(Fixed &obj1, Fixed &obj2)
 const Fixed Fixed::max(const Fixed &obj1, const Fixed &obj2)
 {
 	return (obj1 < obj2  ? obj2 : obj1);
+}
+
+std::ostream& operator << (std::ostream& os, const Fixed &obj)
+{
+	os << obj.toFloat();		
+	return os;	
 }

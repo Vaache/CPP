@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Point.cpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vhovhann <vhovhann@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/11 20:49:21 by vhovhann          #+#    #+#             */
-/*   Updated: 2024/04/17 14:07:04 by vhovhann         ###   ########.fr       */
+/*   Created: 2024/04/27 16:30:48 by vhovhann          #+#    #+#             */
+/*   Updated: 2024/05/01 15:43:02 by vhovhann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
+#include "Span.hpp"
+#include <time.h>
 
-Point::Point():x(0),y(0)
-{}
-
-Point::Point(const float num1, const float num2):x(num1),y(num2)
-{}
-
-Point::Point(const Point& other):x(other.x),y(other.y)
-{}
-Point& Point::operator =(const Point& other)
+int main()
 {
-	(void)other;
-	return *this;
-}
-Point::~Point()
-{}
-
-float Point::getX() const
-{
-	return (x.toFloat());
-}
-float Point::getY() const
-{
-	return (y.toFloat());
+	try
+	{
+		Span sp = Span(100000);
+		for (int i = 0; i < 100000; ++ i)
+			sp.addNumber(rand());
+		std::cout << sp.shortestSpan() << std::endl;
+		std::cout << sp.longestSpan() << std::endl;
+	}
+	catch (const std::exception &ex)
+	{
+		std::cerr << ex.what() << std::endl;
+	}
+	return 0;
 }
