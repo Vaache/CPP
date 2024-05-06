@@ -1,18 +1,19 @@
-#include <iostream>
-#include <vector>
-#include <iterator>
+#include "BitcoinExchange.hpp"
 
-int main()
+int main(int ac, char **av)
 {
-	std::string str = "Hello World";
-	std::string::iterator it = str.begin();
-	for (; it != str.end(); ++ it)
-		std::cout << *it;
-
-	std::cout << std::endl;
-	std::vector<int> arr = {1,2,3,4,5,6,7,8,9};
-	std::vector<int>::iterator it1 = arr.begin();
-	advace(it1, 3);
-	for (; it1 != arr.end(); ++ it1)
-		std::cout << *it1;
+	if (ac != 2)
+	{
+		std::cout << "Error: could not open file." << std::endl;
+		return 1;
+	}
+	try
+	{
+		BitcoinExchange::validData(av[1]);
+	}
+	catch(const Err::ExpHandler& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
 }
