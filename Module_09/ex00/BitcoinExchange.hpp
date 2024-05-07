@@ -6,12 +6,17 @@
 #define _ERROR_DATA_FORMAT_ "Error : Does not match the description of the data format."
 #define _ERROR_EMPTY_FILE_ "Error : File is empty."
 #define _ERROR_INVALID_DATA_ "Error : The data in the file is incorrect."
+#define _ERROR_INVALID_YEAR_ "Error : Year does not match"
+#define _ERROR_INVALID_MONTH_ "Error : Month does not match"
+#define _ERROR_INVALID_DAY_ "Error : Day does not match"
+#define _ERROR_INVALID_COIN_ "Error : BitCoin does not match"
 
 
 #include <iostream>
 #include <iterator>
 #include <map>
 #include <fstream>
+#include <string>
 #include <algorithm>
 
 namespace mstd
@@ -44,8 +49,10 @@ private:
 	~BitcoinExchange();
 
 private:
+	static void creat_cal(std::map<int,int>& cal);
 	static bool validCharacters(const std::string& str);
-	static bool validData(const std::string& str);
+	static bool validData(const std::string& str, std::map<int,int> &cal);
+	static bool is_all_num(const std::string& coin, int flag);
 
 public:
 
