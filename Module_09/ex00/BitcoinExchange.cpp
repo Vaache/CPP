@@ -1,5 +1,5 @@
 #include "BitcoinExchange.hpp"
-#include <sstream>
+
 std::map<std::string, double> BitcoinExchange::MAP;
 std::string BitcoinExchange::value;
 std::string BitcoinExchange::key;
@@ -79,15 +79,15 @@ bool BitcoinExchange::validCharacters(const std::string& line)
 
 bool BitcoinExchange::validData(const std::string& str, std::map<int,int>& cal)
 {
+	size_t pos = 0;
 	std::string data = str.substr(0, str.find(BitcoinExchange::sym, 0));
-	std::string year = data.substr(0, data.find('-', 0));
-	data = str.substr(str.find('-', 0) + 1, str.find(BitcoinExchange::sym, 0));
-	std::string month = data.substr(0, data.find('-', 0));
-	data = str.substr(0, str.find(BitcoinExchange::sym, 0));
-	std::string day;
-		day = data.substr(data.find_last_of('-', -1) + 1, data.size());
-	if (sym == '|')
-		day.pop_back();
+	pos = data.find('-', 0) + 1;
+	std::string year = data.substr(0, pos - 1);
+	std::string month = data.substr(pos, data.find('-', pos) - pos);
+	pos = data.find('-', pos) + 1;
+	std::string day = data.substr(pos, data.size() - pos);
+	if (BitcoinExchange::sym == '|')
+		day.resize(day.size() - 1);
 	if (year.size() != 4 || std::atoi(year.c_str()) < 2009 || std::atoi(year.c_str()) > 2022 \
 		|| !BitcoinExchange::is_all_num(year, 0))
 	{
@@ -95,11 +95,11 @@ bool BitcoinExchange::validData(const std::string& str, std::map<int,int>& cal)
 		err += " => [" + year + "]";
 		return false;
 	}
-	std::map<int,int>::const_iterator it = cal.cbegin();
-	for (; it != cal.cend(); ++ it)
+	std::map<int,int>::const_iterator it = cal.begin();
+	for (; it != cal.end(); ++ it)
 		if (it->first == std::atoi(month.c_str()))
 			break;
-	if (it == cal.cend() || month.size() != 2 || !BitcoinExchange::is_all_num(month, 0))
+	if (it == cal.end() || month.size() != 2 || !BitcoinExchange::is_all_num(month, 0))
 	{
 		err = _ERROR_INVALID_MONTH_;
 		err += " => [" + month + "]";
@@ -121,16 +121,16 @@ bool BitcoinExchange::validData(const std::string& str, std::map<int,int>& cal)
 
 bool BitcoinExchange::is_all_num(const std::string& coin, int flag)
 {
-	std::string::const_iterator it = coin.cbegin();
+	std::string::const_iterator it = coin.begin();
 	size_t dot = 0;
 	if (flag)
 	{
-		for (; it != coin.cend(); ++ it)
+		for (; it != coin.end(); ++ it)
 		{
 			if (*it == '.')
 				dot ++;
 			else if (*it < '0'|| *it > '9' || \
-				std::stod(coin) > 66063.56 || std::stod(coin) < 0)
+				std::strtod(coin.c_str(), NULL) > 66063.56 || std::strtod(coin.c_str(), NULL) < 0)
 			{
 				err = _ERROR_INVALID_COIN_;
 				err += " => [" + coin + "]";
@@ -146,7 +146,7 @@ bool BitcoinExchange::is_all_num(const std::string& coin, int flag)
 	}
 	else
 	{
-		for (; it != coin.cend(); ++ it)
+		for (; it != coin.end(); ++ it)
 			if (*it < '0'|| *it > '9')
 				return false;
 	}
@@ -182,7 +182,7 @@ void BitcoinExchange::dbData(const std::string FileName)
 			}
 			BitcoinExchange::key = line.substr(0, line.find(',',0));
 			BitcoinExchange::value = line.substr(line.find(',', 0) + 1, line.size());
-			BitcoinExchange::MAP[key] = std::stod(line.substr(line.find(',',0) + 1, line.size()));
+			BitcoinExchange::MAP[key] = std::strtod(line.substr(line.find(',',0) + 1, line.size()).c_str(), NULL);
 		}
 	}
 	if (BitcoinExchange::MAP.empty())
@@ -202,7 +202,7 @@ bool BitcoinExchange::validInputCoin(const std::string & str)
 		err = _ERROR_INVALID_COIN_;
 		return false;
 	}
-	std::string::const_iterator it = str.cbegin();
+	std::string::const_iterator it = str.begin();
 	if (*it == '-')
 	{
 		err = _ERROR_NEGATIVE_NUMBER_;
@@ -211,7 +211,7 @@ bool BitcoinExchange::validInputCoin(const std::string & str)
 	if (*it == '+')
 		++ it;
 	size_t dot = 0;
-	while (it != str.cend())
+	while (it != str.end())
 	{
 		if (*it == '.')
 			++ dot;
