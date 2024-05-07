@@ -2,7 +2,6 @@
 
 int main(int ac, char **av)
 {
-	(void)av;
 	if (ac != 2)
 	{
 		std::cout << "Error: could not open file." << std::endl;
@@ -11,6 +10,7 @@ int main(int ac, char **av)
 	try
 	{
 		BitcoinExchange::dbData("data.csv");
+		BitcoinExchange::validInput(av[1]);
 	}
 	catch(const mstd::ExpHandler& e)
 	{

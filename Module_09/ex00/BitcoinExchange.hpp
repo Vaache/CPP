@@ -10,13 +10,15 @@
 #define _ERROR_INVALID_MONTH_ "Error : Month does not match"
 #define _ERROR_INVALID_DAY_ "Error : Day does not match"
 #define _ERROR_INVALID_COIN_ "Error : BitCoin does not match"
+#define _ERROR_NEGATIVE_NUMBER_ "Error: not a positive number."
+#define _ERROR_BAD_INPUT_ "Error: bad input => "
+#define _ERROR_LARGE_NUMBER_ "Error: too large a number."
 
 
 #include <iostream>
 #include <iterator>
 #include <map>
 #include <fstream>
-#include <string>
 #include <algorithm>
 
 namespace mstd
@@ -41,6 +43,7 @@ private:
 	static std::map<std::string, double> MAP;
 	static std::string value;
 	static std::string key;
+	static char sym;
 
 private:
 	BitcoinExchange();
@@ -50,14 +53,15 @@ private:
 
 private:
 	static void creat_cal(std::map<int,int>& cal);
-	static bool validCharacters(const std::string& str);
-	static bool validData(const std::string& str, std::map<int,int> &cal);
+	static bool validCharacters(const std::string& line);
+	static bool validData(const std::string& str, std::map<int,int>& cal);
 	static bool is_all_num(const std::string& coin, int flag);
+	static bool validInputCoin(const std::string & str);
 
 public:
 
-	static void dbData(std::string FileName);
-	static void validinput(std::string FileName);
+	static void dbData(const std::string FileName);
+	static void validInput(const char * FileName);
 };
 
 #endif
