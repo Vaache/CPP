@@ -2,9 +2,14 @@
 
 int main(int ac, char **av)
 {
+	if (ac == 1)
+	{
+		std::cerr << "Error: could not open file." << std::endl;
+		return 1;
+	}
 	if (ac != 2)
 	{
-		std::cout << "Error: could not open file." << std::endl;
+		std::cerr << _ERROR_ARGUMENTS_ << std::endl;
 		return 1;
 	}
 	try

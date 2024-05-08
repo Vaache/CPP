@@ -255,7 +255,7 @@ void BitcoinExchange::validInput(const char * FileName)
 		{
 			if (!BitcoinExchange::validCharacters(line) || !BitcoinExchange::validData(line, cal) \
 					|| !BitcoinExchange::validInputCoin(line.substr(line.find('|', 0) + 2, line.size())))
-				std::cout << err << std::endl;
+				std::cerr << err << std::endl;
 			else
 			{
 				std::map<std::string, double>::iterator it = BitcoinExchange::MAP.upper_bound(line.substr(0, line.find(BitcoinExchange::sym, 0) - 1));
