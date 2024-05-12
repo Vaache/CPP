@@ -11,6 +11,8 @@
 # include <deque>
 # include <list>
 # include <sstream>
+# include <algorithm>
+# include <climits>
 
 class PmergeMe
 {

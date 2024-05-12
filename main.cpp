@@ -55,12 +55,9 @@ public:
         }
 
         while (k > 0) {
-            int a = k - 1;
-			int i = a + 2 * k;
-			int g = 2;
-			int p = 4;
-			int c = i + 2 * k * g - k;
-            while (c <= length) {
+            int a = k - 1, i = a + 2 * k, g = 2, p = 4;
+
+            while (i + 2 * k * g - k <= length) {
                 this->order(array, i, i + 2 * k * g - k, k);
                 int b = a + k * (p - 1);
 
@@ -81,7 +78,6 @@ public:
         }
     }
 };
-
 
 int main() {
     std::vector<int> arr = {14,135,614353,65,24525,246153,242462462,14,134134,134,1221};

@@ -76,7 +76,7 @@ void PmergeMe::fill_cont(const std::string& arg)
 	{
 		if (!token.empty())
 		{
-			if (std::atoll(token.c_str()) > INT_MAX)
+			if (std::strtoll(token.c_str(), NULL, 0) > INT_MAX)
 				throw std::runtime_error("");
 			PmergeMe::vect.push_back(std::atoi(token.c_str()));
 			PmergeMe::deq.push_back(std::atoi(token.c_str()));
