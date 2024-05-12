@@ -26,11 +26,13 @@ private:
 private:
 	static bool isPulusDigit(const std::string & arg);
 	static void fill_cont(const std::string& arg);
+	template <typename Cont>
+		static void _sort_pairs_(Cont& arr, size_t lenght);
+	template <typename Cont>
+		static void block_swap(Cont& arr, int a, int b);
 public:
 	static void valid_args(int ac, char **av);
-		static void _PmergeMe_();
-	template <typename Cont>
-		static void _sort_pair(Cont& arr);
+	static void _PmergeMe_();
 };
 
 #endif

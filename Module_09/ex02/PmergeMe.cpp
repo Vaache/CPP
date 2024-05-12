@@ -84,26 +84,31 @@ void PmergeMe::fill_cont(const std::string& arg)
     }
 }
 
+//////////////
+/*	SORTING	*/
+/////////////
+
 template <typename Cont>
-	void PmergeMe::_sort_pair(Cont& arr)
+	void PmergeMe::block_swap(Cont& arr, int a, int b)
 	{
-		size_t first = 0;
-		size_t second = 1;
-		while ((second * 2) <= arr.size())
+		std::swap(arr[a], arr[b]);
+	}
+
+template <typename Cont>
+	void PmergeMe::_sort_pairs_(Cont& arr, size_t lenght)
+	{
+		size_t k = 1;
+		while (k * 2 <= lenght)
 		{
-			if (arr[second] > arr[first])
-			{
-				size_t tmp = arr[second];
-				arr[second] = arr[first];
-				arr[first] = tmp;
-			}
-			second *= 2;
-			first += second - 1;
+			for (size_t i = 2 * k - 1; i < lenght; i += k * 2)
+				if (arr[i - k] > arr[i])
+					PmergeMe::block_swap(arr, i - k, i);
+			k *= 2;
 		}
 	}
 
 void PmergeMe::_PmergeMe_()
 {
-	PmergeMe::_sort_pair(PmergeMe::vect);
+	PmergeMe::_sort_pairs_(PmergeMe::vect, PmergeMe::vect.size());
 	::print(PmergeMe::vect);
 }
