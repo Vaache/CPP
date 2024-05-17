@@ -13,6 +13,8 @@
 # include <sstream>
 # include <algorithm>
 # include <climits>
+# include <ctime>
+# include <sys/time.h>
 
 class PmergeMe
 {
@@ -29,9 +31,11 @@ private:
 	static bool isPulusDigit(const std::string & arg);
 	static void fill_cont(const std::string& arg);
 	template <typename Cont>
-		static void _sort_pairs_(Cont& arr, size_t lenght);
+		static void RunSort(Cont& arr, const size_t size);
 	template <typename Cont>
-		static void block_swap(Cont& arr, int a, int b);
+		static void BlockInsert(Cont& x, Cont& y);
+	template <typename Cont>
+		static int BlockSearch(const Cont& arr, const int val);
 public:
 	static void valid_args(int ac, char **av);
 	static void _PmergeMe_();
